@@ -1,0 +1,7 @@
+{
+  "Name": "OrganizationTrail",
+  "S3BucketName": "cloudtrail-log-bucket-example",
+  "IncludeGlobalServiceEvents": true,
+  "IsMultiRegionTrail": true,
+  "EnableLogFileValidation": true
+}
