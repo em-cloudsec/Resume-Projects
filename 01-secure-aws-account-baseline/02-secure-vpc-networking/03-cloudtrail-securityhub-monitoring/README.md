@@ -95,3 +95,15 @@ Multi-Region: Enabled
 Log File Validation: Enabled
 S3 Delivery: Successful
 Recent Events: Confirmed
+
+CloudTrail:
+  [x] Enabled
+  [x] Multi-region
+  [x] Log validation enabled
+  [x] S3 delivery verified
+
+Security Hub:
+  [x] Enabled
+  [x] CIS Benchmark activated
+  [x] AWS Best Practices activated
+  [x] Findings reviewed and documented
