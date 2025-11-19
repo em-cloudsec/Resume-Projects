@@ -1,4 +1,4 @@
-# – Secure AWS Account Baseline
+#  Secure AWS Account Baseline
 
 ## Goal
 Establish a hardened baseline for a new AWS account by locking down the root user, creating a dedicated IAM admin identity, and enforcing strong credential policies (passwords + MFA).
