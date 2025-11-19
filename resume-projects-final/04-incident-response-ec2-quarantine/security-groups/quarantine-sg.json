@@ -1,0 +1,7 @@
+{
+  "Description": "Quarantine security group",
+  "GroupName": "quarantine-sg",
+  "VpcId": "vpc-xxxxxxxx",
+  "SecurityGroupIngress": [],
+  "SecurityGroupEgress": []
+}
