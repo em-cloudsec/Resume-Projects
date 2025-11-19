@@ -1,56 +1,45 @@
-#  Secure AWS Account Baseline
+# Secure AWS Account Baseline
 
-## Goal
-Establish a hardened baseline for a new AWS account by locking down the root user, creating a dedicated IAM admin identity, and enforcing strong credential policies (passwords + MFA).
+## Purpose
+Establish a hardened AWS account foundation by securing the root user, enforcing MFA, creating an IAM admin identity, and applying strong credential policies. This ensures any future workloads begin in a secure, auditable environment.
 
 ---
 
 ## AWS Services Used
-- IAM (users, groups, policies, MFA)
-- AWS Account Settings (password policy)
-- (Optional) CloudTrail, if logging was verified
+- IAM (Identity and Access Management)
+- AWS Account Settings
+- (Optional) CloudTrail verification
 
 ---
 
 ## Acronyms Used
-- IAM – Identity and Access Management
-- MFA – Multi-Factor Authentication
-- ARN – Amazon Resource Name
-- AWS CLI – AWS Command Line Interface
+- IAM: Identity and Access Management
+- MFA: Multi-Factor Authentication
+- ARN: Amazon Resource Name
 
 ---
 
 ## High-Level Tasks Completed
-
-1. Enabled MFA on the AWS root account.
-2. Verified no access keys exist for the root account.
-3. Created an IAM administrative user (`cl0udadmin`) or role.
-4. Assigned least-privilege admin access to that identity.
-5. Created a read-only policy for future audit users.
-6. Configured a strong account-level IAM password policy.
+1. Enabled MFA on the AWS root account.  
+2. Verified no root access keys exist.  
+3. Created an IAM administrator user (`cl0udadmin`).  
+4. Assigned the admin group with AdministratorAccess.  
+5. Defined a custom ReadOnly policy for future audit roles.  
+6. Configured a strong account-wide password policy.
 
 ---
 
-## Identity Design
-
-- Root user:
-  - MFA enabled
-  - No access keys
-  - Not used for day-to-day operations
-
-- IAM Admin user (example):  
-  - Username: `cl0udadmin`  
-  - Purpose: Day-to-day administrator instead of root  
-
-### Config Evidence (Example)
+## Config Evidence
 
 ```text
 IAM User: cl0udadmin
-Groups: admins
+Assigned Groups: admins
 
-MFA: Enabled
-MFA device: Virtual MFA (e.g., Authenticator app)
-Root account: MFA enabled, no access keys
+MFA Status:
+  - IAM User MFA: Enabled
+  - MFA Device Type: Virtual MFA (Authenticator App)
+  - Root MFA: Enabled
+  - Root Access Keys: None
 
 {
   "MinimumPasswordLength": 12,
@@ -100,3 +89,4 @@ Root account: MFA enabled, no access keys
     }
   ]
 }
+
