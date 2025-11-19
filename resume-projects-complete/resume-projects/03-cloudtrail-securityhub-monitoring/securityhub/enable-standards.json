@@ -1,6 +1,0 @@
-{
-  "Standards": [
-    { "StandardsArn": "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0" },
-    { "StandardsArn": "arn:aws:securityhub:::ruleset/aws-foundational-security-best-practices/v/1.0.0" }
-  ]
-}

@@ -1,1 +1,0 @@
-# CloudTrail & SecurityHub Monitoring
