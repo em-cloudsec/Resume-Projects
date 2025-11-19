@@ -1,7 +1,0 @@
-schemaVersion: "0.3"
-description: "Quarantine EC2 instance by replacing security groups"
-parameters:
-  InstanceId:
-    type: "String"
-  QuarantineSecurityGroupId:
-    type: "String"
