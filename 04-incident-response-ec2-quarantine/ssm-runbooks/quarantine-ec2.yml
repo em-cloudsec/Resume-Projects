@@ -1,0 +1,19 @@
+schemaVersion: "0.3"
+description: "Quarantine EC2 instance by replacing security groups (placeholder)."
+parameters:
+  InstanceId:
+    type: "String"
+    description: "The ID of the EC2 instance to quarantine."
+  QuarantineSecurityGroupId:
+    type: "String"
+    description: "The ID of the quarantine security group."
+
+mainSteps:
+  - name: quarantineInstance
+    action: "aws:executeAwsApi"
+    inputs:
+      Service: "ec2"
+      Api: "ModifyInstanceAttribute"
+      InstanceId: "{{ InstanceId }}"
+      Groups:
+        - "{{ QuarantineSecurityGroupId }}"
